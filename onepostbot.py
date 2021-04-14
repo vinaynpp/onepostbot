@@ -142,12 +142,42 @@ def andar():
 
     # on noncommand i.e message - echo the message on Telegram
     dispatcher.add_handler(
-        MessageHandler(Filters.chat(username=cdjson["telegram_username"]) & Filters.text & ~Filters.command, echotext))
+        MessageHandler((Filters.chat(username=cdjson["telegram_username"])) & Filters.text & ~Filters.command,
+                       echotext))
     dispatcher.add_handler(MessageHandler(
         Filters.chat(username=cdjson["telegram_username"]) & Filters.photo & Filters.caption & ~Filters.command, photo))
     dispatcher.add_handler(
         MessageHandler(Filters.chat(username=cdjson["telegram_username"]) & Filters.photo & ~Filters.command,
                        echoimage))
+
+    dispatcher.add_handler(
+        MessageHandler((Filters.chat(username=cdjson["telegram_username1"])) & Filters.text & ~Filters.command,
+                       echotext))
+    dispatcher.add_handler(MessageHandler(
+        Filters.chat(username=cdjson["telegram_username1"]) & Filters.photo & Filters.caption & ~Filters.command, photo))
+    dispatcher.add_handler(
+        MessageHandler(Filters.chat(username=cdjson["telegram_username1"]) & Filters.photo & ~Filters.command,
+                       echoimage))
+
+    dispatcher.add_handler(
+        MessageHandler((Filters.chat(username=cdjson["telegram_username2"])) & Filters.text & ~Filters.command,
+                       echotext))
+    dispatcher.add_handler(MessageHandler(
+        Filters.chat(username=cdjson["telegram_username2"]) & Filters.photo & Filters.caption & ~Filters.command, photo))
+    dispatcher.add_handler(
+        MessageHandler(Filters.chat(username=cdjson["telegram_username2"]) & Filters.photo & ~Filters.command,
+                       echoimage))
+
+    dispatcher.add_handler(
+        MessageHandler((Filters.chat(username=cdjson["telegram_username3"])) & Filters.text & ~Filters.command,
+                       echotext))
+    dispatcher.add_handler(MessageHandler(
+        Filters.chat(username=cdjson["telegram_username3"]) & Filters.photo & Filters.caption & ~Filters.command, photo))
+    dispatcher.add_handler(
+        MessageHandler(Filters.chat(username=cdjson["telegram_username3"]) & Filters.photo & ~Filters.command,
+                       echoimage))
+
+
     dispatcher.add_handler(MessageHandler(~Filters.command, echonikal))
 
     # Start the Bot
